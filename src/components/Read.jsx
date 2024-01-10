@@ -2,12 +2,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// "http://localhost:5000/api/blog",
 
 const Create = () => {
   const [data, setData] = useState([]);
+  console.log(process.env.REACT_APP_API);
 
-  let str =
-    "The apple mango is a friendship and a banana is a monster because it is banana and apple is the king which i like the mosnt indeed";
   const btnStyle = {
     padding: "5px 20px",
     marginRight: "12px",
@@ -17,13 +17,15 @@ const Create = () => {
   };
   async function getData() {
     try {
-      const getAllData = await axios.get("http://localhost:5000/api/blog");
+      const getAllData = await axios.get(
+        `${process.env.REACT_APP_API}api/blog`
+      );
       setData(getAllData.data);
     } catch (error) {
       console.log(error);
     }
   }
-  console.log(data);
+  // console.log(data);
   useEffect(() => {
     getData();
   }, []);
@@ -60,7 +62,9 @@ const Create = () => {
                       Read More
                     </Link>
                     <div style={{ marginTop: "6px" }}>
-                      <button style={btnStyle}>UPDATE</button>
+                      <Link to={`/updateblog/${e._id}`}>
+                        <button style={btnStyle}>UPDATE</button>
+                      </Link>
                       <button
                         onClick={() => {
                           handleDelete(e._id);

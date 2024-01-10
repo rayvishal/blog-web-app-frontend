@@ -1,7 +1,10 @@
 // "use client";
 import { redirect, useNavigate } from "react-router-dom";
-
+import dotenv from "dotenv";
 // import { NextResponse } from "next/server";
+// dotenv.config({
+
+// })
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
@@ -17,7 +20,8 @@ const Blog = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const sendData = await axios.post("http://localhost:5000/api/blog", {
+      const sendData = await axios.post(`${REACT_APP_API}api/blog`, {
+        // const sendData = await axios.post("http://localhost:5000/api/blog", {
         title: title,
         content: content,
       });
