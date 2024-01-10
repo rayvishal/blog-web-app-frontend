@@ -9,7 +9,7 @@ const BlogDetail = () => {
   async function getData() {
     try {
       const getSingleData = await axios.get(
-        `${REACT_APP_API}api/singleblog/${id}`
+        `${process.env.REACT_APP_API}api/singleblog/${id}`
       );
       setData(getSingleData.data);
     } catch (error) {
