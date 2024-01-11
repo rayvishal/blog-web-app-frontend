@@ -8,9 +8,9 @@ const Header = () => {
       style={{ padding: "20px" }}
       className="navbar navbar-expand-lg navbar-light bg-light"
     >
-      <a className="navbar-brand" href="#">
+      <Link to={"/"} className="navbar-brand" href="#">
         Navbar
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"

@@ -43,42 +43,41 @@ const Create = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-          {data.length
-            ? data.map((e) => (
-                <div key={e.id} className="card" style={{ width: "18rem" }}>
-                  <div className="card-body">
-                    <h5 className="card-title">{e.title}</h5>
-                    <p className="card-text">
-                      {`${e.content}`.substring(0, 100) + "..."}
-                    </p>
-                    <Link
-                      to={`/allblogs/${e._id}`}
-                      // to="/allblogs/:id"
-
-                      className="btn btn-primary"
-                    >
-                      Read More
-                    </Link>
-                    <div style={{ marginTop: "6px" }}>
-                      <Link to={`/updateblog/${e._id}`}>
-                        <button style={btnStyle}>UPDATE</button>
-                      </Link>
-                      <button
-                        onClick={() => {
-                          handleDelete(e._id);
-                        }}
-                        style={btnStyle}
-                      >
-                        DELETE
-                      </button>
-                    </div>
-                  </div>
+      <h2>Blogs</h2>
+      <div style={{ marginBottom: "150px" }}>
+        {data.length
+          ? data.map((e) => (
+              <div class="card" style={{ marginBottom: "20px" }}>
+                <div class="card-body">
+                  <h5 class="card-title">{e.title}</h5>
+                  <p class="card-text">
+                    {`${e.content}`.substring(0, 200) + "..."}
+                  </p>
+                  <Link
+                    to={`/allblogs/${e._id}`}
+                    href="#"
+                    class="btn btn-primary"
+                  >
+                    Read More
+                  </Link>
                 </div>
-              ))
-            : null}
-        </div>
+                <div style={{ marginTop: "6px" }}>
+                  {" "}
+                  <Link to={`/updateblog/${e._id}`}>
+                    <button style={btnStyle}>UPDATE</button>{" "}
+                  </Link>{" "}
+                  <button
+                    onClick={() => {
+                      handleDelete(e._id);
+                    }}
+                    style={btnStyle}
+                  >
+                    DELETE
+                  </button>
+                </div>
+              </div>
+            ))
+          : null}
       </div>
     </>
   );
