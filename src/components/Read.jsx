@@ -4,10 +4,11 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 // "http://localhost:5000/api/blog",
 
-const Create = () => {
+const Read = () => {
   const [data, setData] = useState([]);
-  console.log(process.env.REACT_APP_API);
-
+  // console.log(process.env.REACT_APP_API);
+  // console.log(data);
+  const [value, setValue] = useState(true);
   const btnStyle = {
     padding: "5px 20px",
     marginRight: "12px",
@@ -21,6 +22,7 @@ const Create = () => {
         `${process.env.REACT_APP_API}api/blog`
       );
       setData(getAllData.data);
+      console.log("run");
     } catch (error) {
       console.log(error);
     }
@@ -40,23 +42,52 @@ const Create = () => {
       console.log(error);
     }
   }
+  const handleToggle = async () => {
+    if (value) {
+      const sortedData = [...data].sort((fstObj, scdObj) => {
+        return fstObj.title.localeCompare(scdObj.title);
+      });
+      setData(sortedData);
+
+      setValue(!value);
+    } else {
+      getData();
+      setValue(!value);
+    }
+
+    // console.log(sortedData);
+    // setData()
+  };
+  console.log(data);
 
   return (
     <>
+      <h6 style={{ fontFamily: "revert-layer" }}>
+        To sort the blog alphabetically Click the toggle below
+      </h6>
+      <label
+        className="switch"
+        onChange={() => {
+          handleToggle();
+        }}
+      >
+        <input type="checkbox" />
+        <span className="slider round"></span>
+      </label>
       <h2>Blogs</h2>
       <div style={{ marginBottom: "150px" }}>
         {data.length
           ? data.map((e) => (
-              <div class="card" style={{ marginBottom: "20px" }}>
-                <div class="card-body">
-                  <h5 class="card-title">{e.title}</h5>
-                  <p class="card-text">
+              <div className="card" style={{ marginBottom: "20px" }}>
+                <div className="card-body">
+                  <h5 className="card-title">{e.title}</h5>
+                  <p className="card-text">
                     {`${e.content}`.substring(0, 200) + "..."}
                   </p>
                   <Link
                     to={`/allblogs/${e._id}`}
                     href="#"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                   >
                     Read More
                   </Link>
@@ -83,4 +114,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default Read;

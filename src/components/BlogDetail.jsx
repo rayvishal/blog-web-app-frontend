@@ -25,8 +25,23 @@ const BlogDetail = () => {
     <div>
       {data ? (
         <>
-          <h1 style={{ marginBottom: "20px" }}>{data.title}</h1>
-          <h6>{data.content}</h6>
+          <h1 style={{ marginBottom: "20px", marginTop: "10px" }}>
+            {data.title}
+          </h1>
+          <hr></hr>
+          <p
+            style={{
+              lineHeight: "200%",
+              marginTop: "30px",
+              padding: "0px 70px",
+              marginBottom: "200px",
+              whiteSpace: "pre-wrap",
+              textAlign: "justify",
+              textDecoration: "underline",
+            }}
+          >
+            {data.content}
+          </p>
         </>
       ) : null}
     </div>
