@@ -35,7 +35,7 @@ const Read = () => {
   async function handleDelete(id) {
     try {
       const deleteBlog = await axios.delete(
-        `${process.env.REACT_APP_API}/api/deleteblog/${id}`
+        `${process.env.REACT_APP_API}api/deleteblog/${id}`
       );
       getData();
     } catch (error) {
