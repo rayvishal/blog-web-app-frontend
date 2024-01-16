@@ -9,7 +9,7 @@ const Home = () => {
           marginTop: "0px",
           // marginBottom: "10px",
           backgroundColor: "#b7dfb8",
-          height: "100vh",
+          height: "85vh",
           // marginBottom: "100px",
         }}
       >
