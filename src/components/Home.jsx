@@ -4,22 +4,34 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <>
-      <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+      <div
+        style={{
+          marginTop: "0px",
+          // marginBottom: "10px",
+          backgroundColor: "#b7dfb8",
+          height: "100vh",
+          // marginBottom: "100px",
+        }}
+      >
         <p style={{ color: "#AA336A", display: "inline-block" }}>Crafting</p>
         <p style={{ color: "	#598BAF", display: "inline-block" }}>
           . FEBREARY 12,2016
         </p>
 
         <h1 style={{ wordWrap: "break-word" }}>
-          Whatever is begun in anger ends in shame
+          Blog with the best
+          {/* Whatever is begun in anger ends in shame */}
         </h1>
         <div style={{ margin: "auto" }}>
           <p style={{ fontSize: "large", padding: " 5px 15px" }}>
-            Now when I had mastered the language of this water and had come to
+            More bloggers and independent creators choose Blog.com than any
+            other blogging tool. Tap into intuitive, flexible tools that put
+            writers, bloggers, and creators first.
+            {/* Now when I had mastered the language of this water and had come to
             know every trifling feature that bordered the great river as
             familiarly as I knew the letters of the alphabet, I had made a
             valuable acquisition. I still keep in mind a certain wonderful
-            sunset which I witnessed when and steamboating
+            sunset which I witnessed when and steamboating */}
           </p>
         </div>
 
@@ -56,10 +68,12 @@ const Home = () => {
             style={{
               padding: "10px 7px",
               fontSize: "large",
+              fontWeight: "bold",
               borderRadius: "8px",
+              fontFamily: "monospace",
             }}
           >
-            Write your blog here
+            Start a blog
           </button>
         </Link>
       </div>

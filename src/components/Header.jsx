@@ -5,11 +5,11 @@ import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <nav
-      style={{ padding: "20px" }}
-      className="navbar navbar-expand-lg navbar-light bg-light"
+      style={{ padding: "20px", backgroundColor: "#265728" }}
+      className="navbar navbar-expand-lg navbar-light bg-green"
     >
       <Link to={"/"} className="navbar-brand" href="#">
-        Navbar
+        <p style={{ fontWeight: "bold", color: "white" }}>Blog.com</p>
       </Link>
       <button
         className="navbar-toggler"
@@ -29,13 +29,13 @@ const Header = () => {
         <div className="navbar-nav">
           <NavLink to="/" className="nav-item nav-link active mr-3" href="#">
             {" "}
-            Home
+            <p style={{ fontWeight: "bold", color: "white" }}>Home</p>
           </NavLink>
           <NavLink to="createblog" className="nav-item nav-link mr-3" href="#">
-            Create Blog
+            <p style={{ fontWeight: "bold", color: "white" }}>Create Blog</p>
           </NavLink>
           <NavLink to="allblogs" href="#" className="nav-item nav-link mr-3">
-            All blogs
+            <p style={{ fontWeight: "bold", color: "white" }}>All blogs</p>
           </NavLink>
           {/* <a className="nav-item nav-link disabled" href="#">
             Disabled
