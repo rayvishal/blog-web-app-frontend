@@ -1,6 +1,6 @@
 import React from "react";
 // import Link from "next/link";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -27,16 +27,16 @@ const Header = () => {
         id="navbarNavAltMarkup"
       >
         <div className="navbar-nav">
-          <Link to="/" className="nav-item nav-link active mr-3" href="#">
+          <NavLink to="/" className="nav-item nav-link active mr-3" href="#">
             {" "}
             Home
-          </Link>
-          <Link to="createblog" className="nav-item nav-link mr-3" href="#">
+          </NavLink>
+          <NavLink to="createblog" className="nav-item nav-link mr-3" href="#">
             Create Blog
-          </Link>
-          <Link to="allblogs" href="#" className="nav-item nav-link mr-3">
+          </NavLink>
+          <NavLink to="allblogs" href="#" className="nav-item nav-link mr-3">
             All blogs
-          </Link>
+          </NavLink>
           {/* <a className="nav-item nav-link disabled" href="#">
             Disabled
           </a> */}

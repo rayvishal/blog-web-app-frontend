@@ -1,4 +1,5 @@
 // "use client";
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const Read = () => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   // console.log(process.env.REACT_APP_API);
   // console.log(data);
   const [value, setValue] = useState(true);
@@ -21,6 +23,7 @@ const Read = () => {
       const getAllData = await axios.get(
         `${process.env.REACT_APP_API}api/blog`
       );
+      setLoading(false);
       setData(getAllData.data);
       console.log("run");
     } catch (error) {
@@ -34,10 +37,14 @@ const Read = () => {
   //   getData();
   async function handleDelete(id) {
     try {
-      const deleteBlog = await axios.delete(
-        `${process.env.REACT_APP_API}api/deleteblog/${id}`
-      );
-      getData();
+      if (window.confirm("Press Ok to confirm it")) {
+        const deleteBlog = await axios.delete(
+          `${process.env.REACT_APP_API}api/deleteblog/${id}`
+        );
+        getData();
+      } else {
+        // null;
+      }
     } catch (error) {
       console.log(error);
     }
@@ -75,6 +82,8 @@ const Read = () => {
         <span className="slider round"></span>
       </label>
       <h2>Blogs</h2>
+      {loading ? <h1>Loading...</h1> : null}
+
       <div style={{ marginBottom: "150px" }}>
         {data.length
           ? data.map((e) => (
