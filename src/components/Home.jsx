@@ -61,6 +61,8 @@ const Home = () => {
           </p>
         </div>
         {/* card */}
+        {/* {loading ? <div class="loader"></div> : null} */}
+        {loading ? <h1>Loading...</h1> : null}
         <div style={mainCard}>
           {currentRecords.length
             ? currentRecords.map((e) => (
@@ -102,7 +104,6 @@ const Home = () => {
               ))
             : null}
         </div>
-
         <Pagination
           nPages={nPages}
           currentPage={currentPage}
