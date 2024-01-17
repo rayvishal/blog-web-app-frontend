@@ -5,7 +5,11 @@ import { Link, NavLink } from "react-router-dom";
 const Header = () => {
   return (
     <nav
-      style={{ padding: "20px", backgroundColor: "#265728" }}
+      style={{
+        padding: "20px",
+        backgroundColor: "#265728",
+        // marginBottom: "0px",
+      }}
       className="navbar navbar-expand-lg navbar-light bg-green"
     >
       <Link to={"/"} className="navbar-brand" href="#">

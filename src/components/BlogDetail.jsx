@@ -59,7 +59,7 @@ const BlogDetail = () => {
     <>
       {loading ? <h1>Loading..</h1> : null}
 
-      <div style={{ marginBottom: "200px" }}>
+      <div style={{ paddingBottom: "200px" }}>
         {data ? (
           <>
             <h1 style={{ marginBottom: "20px", marginTop: "10px" }}>
@@ -86,6 +86,7 @@ const BlogDetail = () => {
                   Your Comment
                 </label>
                 <textarea
+                  placeholder="Write your comment here"
                   className="form-control"
                   id="commentTextarea"
                   rows="4"
