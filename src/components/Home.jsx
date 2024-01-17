@@ -9,7 +9,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   //User is currently on this page
   const [currentPage, setCurrentPage] = useState(1);
-  const [recordsPerPage] = useState(6);
+  const [recordsPerPage] = useState(5);
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 
