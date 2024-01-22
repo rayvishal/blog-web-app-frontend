@@ -17,17 +17,33 @@ const Home = () => {
   const nPages = Math.ceil(data.length / recordsPerPage);
   // console.log(nPages);
 
-  useEffect(() => {
+  //test
+  function getAllData() {
     axios
       .get(`${process.env.REACT_APP_API}api/blog`)
       .then((res) => {
-        setData(res.data);
         setLoading(false);
+        setData(res.data);
+
+        // setLoading(false);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }
+  getAllData();
+  //test
+  // useEffect(() => {
+  //   axios
+  //     .get(`${process.env.REACT_APP_API}api/blog`)
+  //     .then((res) => {
+  //       setData(res.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
   // console.log(data);
   // getAllData();
   // console.log("hello");
