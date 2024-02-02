@@ -1,5 +1,4 @@
 import React from "react";
-// import Link from "next/link";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -8,7 +7,6 @@ const Header = () => {
       style={{
         padding: "20px",
         backgroundColor: "#265728",
-        // marginBottom: "0px",
       }}
       className="navbar navbar-expand-lg navbar-light bg-green"
     >
@@ -41,9 +39,6 @@ const Header = () => {
           <NavLink to="allblogs" href="#" className="nav-item nav-link mr-3">
             <p style={{ fontWeight: "bold", color: "white" }}>All blogs</p>
           </NavLink>
-          {/* <a className="nav-item nav-link disabled" href="#">
-            Disabled
-          </a> */}
         </div>
       </div>
     </nav>

@@ -15,9 +15,7 @@ const Home = () => {
 
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(data.length / recordsPerPage);
-  // console.log(nPages);
 
-  //test
   function getAllData() {
     axios
       .get(`${process.env.REACT_APP_API}api/blog`)
@@ -32,21 +30,7 @@ const Home = () => {
       });
   }
   getAllData();
-  //test
-  // useEffect(() => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_API}api/blog`)
-  //     .then((res) => {
-  //       setData(res.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
-  // console.log(data);
-  // getAllData();
-  // console.log("hello");
+
   const card = {
     height: "320px",
     width: "400px",
@@ -56,15 +40,15 @@ const Home = () => {
     border: "9px solid white",
   };
   const mainCard = { display: "flex", flexDirection: "row", flexWrap: "wrap" };
-  // let array = [3, 4, 5, 8, 3, 6, 7, 3, 9];
+
   return (
     <>
       <div
         style={{
           marginTop: "0px",
-          // marginBottom: "10px",
+
           backgroundColor: "#b7dfb8",
-          // height: "85vh",
+
           paddingBottom: "20px",
         }}
       >
@@ -76,8 +60,7 @@ const Home = () => {
             writers, bloggers, and creators first.
           </p>
         </div>
-        {/* card */}
-        {/* {loading ? <div class="loader"></div> : null} */}
+
         {loading ? <h1>Loading...</h1> : null}
         <div style={mainCard}>
           {currentRecords.length

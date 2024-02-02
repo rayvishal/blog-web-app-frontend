@@ -1,19 +1,13 @@
-// "use client";
 import { redirect, useNavigate } from "react-router-dom";
-// import dotenv from "dotenv";
-// import { NextResponse } from "next/server";
-// dotenv.config({
 
-// })
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-// import { redirect } from "next/navigation";
-// import { useRouter } from "next/navigation";
+
 const Blog = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  //   const router = useRouter();
+
   const navigate = useNavigate();
 
   console.log(title, content);
@@ -23,13 +17,11 @@ const Blog = () => {
       const sendData = await axios.post(
         `${process.env.REACT_APP_API}api/blog`,
         {
-          // const sendData = await axios.post("http://localhost:5000/api/blog", {
           title: title,
           content: content,
         }
       );
 
-      //   router.push("/allblogs");
       navigate("/allblogs");
       console.log(sendData);
     } catch (error) {

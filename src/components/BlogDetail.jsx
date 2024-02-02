@@ -44,11 +44,7 @@ const BlogDetail = () => {
         { headers: { "Content-Type": "text/plain" } }
       );
       getSingleComment();
-      // const getSingleDataComment = await axios.get(
-      //   `${process.env.REACT_APP_API}api/singleblog/${id}`
-      // );
-      // console.log(getSingleDataComment.data);
-      // setCommentArray(getSingleDataComment.data.comments);
+
       console.log(data.comments);
     } catch (error) {
       console.log(error);
@@ -156,68 +152,3 @@ const BlogDetail = () => {
 };
 
 export { BlogDetail };
-// {data ? (
-//   <>
-//     <h1 style={{ marginBottom: "20px", marginTop: "10px" }}>
-//       {data.title}
-//     </h1>
-//     <hr></hr>
-//     <p
-//       style={{
-//         lineHeight: "200%",
-//         marginTop: "30px",
-//         padding: "0px 70px",
-//         // marginBottom: "200px",
-//         whiteSpace: "pre-wrap",
-//         textAlign: "justify",
-//         // textDecoration: "",
-//       }}
-//     >
-//       {data.content}
-//     </p>
-//     {/* this is a commnet area */}
-//     <form onSubmit={handleComment}>
-//       <div className="mb-3">
-//         <label htmlFor="commentTextarea" className="form-label">
-//           Your Comment
-//         </label>
-//         <textarea
-//           className="form-control"
-//           id="commentTextarea"
-//           rows="4"
-//           value={comment}
-//           onChange={(e) => {
-//             setComment(e.target.value);
-//           }}
-//         ></textarea>
-//       </div>
-//       <button type="submit" className="btn btn-primary">
-//         Submit Comment
-//       </button>
-//     </form>
-//     {/* <div> */}
-//     {/* this is a end area */}
-//     {/* show comments start */}
-//     {commentArray.length}
-//     <p
-//       style={{
-//         display: "inline-block",
-//         paddingLeft: "10px",
-//         fontSize: "large",
-//         fontWeight: "bold",
-//       }}
-//     >
-//       Comments
-//     </p>
-//     <div style={{ marginTop: "30px" }}>
-//       {commentArray.length
-//         ? commentArray.map((e) => (
-//             <ul key={e.key}>
-//               <li>{e}</li>
-//             </ul>
-//           ))
-//         : null}
-//       {/* show comments end */}
-//     </div>
-//   </>
-// ) : null}
